@@ -8,6 +8,8 @@ const List = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["places"],
     queryFn: getPlaces,
+    retry: 4,
+    // retryDelay: 2000 (time)
   });
   return (
     <div className="mt-10">
