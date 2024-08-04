@@ -3,8 +3,14 @@ import { getPlaces } from "../../api";
 import Loader from "../../components/Loader";
 import Error from "../../components/Error";
 import Card from "./Card";
+import { useSearchParams } from "react-router-dom";
 
 const List = () => {
+  // urldeki parametrleri al ve nesne haline getir
+  const [params] = useSearchParams();
+  const paramsObj = Object.fromEntries(params.entries());
+
+  // places sorgusu
   const { isLoading, error, data } = useQuery({
     queryKey: ["places"],
     queryFn: getPlaces,
