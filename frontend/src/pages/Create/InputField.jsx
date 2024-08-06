@@ -3,20 +3,20 @@ const InputField = ({
   name,
   placeholder,
   type = "text",
-  isTextArea,
-  required,
+  isTextarea,
+  required = true,
   min,
   max,
 }) => {
   return (
     <div className="flex flex-col gap-3">
       <label className="font-bold">{label}</label>
-      {isTextArea ? (
+      {isTextarea ? (
         <textarea
           placeholder={placeholder}
+          className="py-1 px-4 border rounded-md shadow"
           name={name}
           type={type}
-          className="py-1 px-4 border rounded-md shadow"
           required={required}
         />
       ) : (
@@ -34,4 +34,5 @@ const InputField = ({
     </div>
   );
 };
+
 export default InputField;

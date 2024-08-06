@@ -17,19 +17,20 @@ const Detail = () => {
     queryKey: ["place"],
     queryFn: () => getPlace(id),
   });
+
   return (
     <Container designs={"max-w-[700px]"}>
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Error info={error.message} queryKey={place} />
+        <Error info={error.message} queryKey="place" />
       ) : (
         <div className="flex flex-col gap-3">
           <Buttons id={data.id} />
 
           <div className="flex justify-between">
             <h1 className="text-3xl font-bold">{data.name}</h1>
-            <Rating />
+            <Rating point={data.rating} />
           </div>
           <p>{data.description}</p>
           <img src={data.image_url} className="rounded-lg" />

@@ -11,7 +11,7 @@ export const getPlace = (id) =>
   api.get(`/api/place/${id}`).then((res) => res.data.place);
 
 // yeni konaklama ekle
-export const addPlace = (data) => api.post(`/api/place/`, data);
+export const addPlace = (data) => api.post(`/api/places`, data);
 
 // konaklamayı kaldır
 export const deletePlace = (id) => api.delete(`/api/place/${id}`);

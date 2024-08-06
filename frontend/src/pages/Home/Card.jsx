@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { CgUnavailable } from "react-icons/cg";
-import { MdEventAvailable } from "react-icons/md";
+import Availability from "../../components/Availability";
 
 const Card = ({ place }) => {
   //ratin değerini farklı renklerle gösterme
@@ -12,7 +11,7 @@ const Card = ({ place }) => {
       : "bg-red-500";
   return (
     <Link
-      to={"/"}
+      to={`/place/${place.id}`}
       className="border rounded-md p-4 grid grid-cols-6 gap-3 min-h-[300px] cursor-pointer"
     >
       <div className="col-span-2">
@@ -26,11 +25,8 @@ const Card = ({ place }) => {
         <div className="flex flex-col gap-3">
           <div className="flex items-center justify-between">
             <h1 className="font-semibold text-2xl">{place.name}</h1>
-            {place.availability ? (
-              <MdEventAvailable className="text-xl text-green-700" />
-            ) : (
-              <CgUnavailable className="text-xl text-red-700" />
-            )}
+
+            <Availability status={place.availability} />
           </div>
           <p>{place.location}</p>
           <div className="flex gap-4">
