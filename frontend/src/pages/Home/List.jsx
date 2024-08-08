@@ -12,9 +12,9 @@ const List = () => {
 
   // places sorgusu
   const { isLoading, error, data } = useQuery({
-    queryKey: ["places"],
-    queryFn: getPlaces,
-    retry: 4,
+    queryKey: ["places", paramsObj],
+    queryFn: () => getPlaces(paramsObj),
+    retry: 2,
     // retryDelay: 2000 (time)
   });
   return (
