@@ -20,7 +20,13 @@ const Filter = () => {
         >
           <option value="">Seçiniz</option>
           <option>İstanbul</option>
+          <option>Ankara</option>
+          <option>Antalya</option>
+          <option>Bursa</option>
+          <option>Adana</option>
+          <option>Mersin</option>
           <option>İzmir</option>
+          <option>Eskişehir</option>
           <option>Rize</option>
         </select>
       </div>
